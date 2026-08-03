@@ -13,7 +13,10 @@ export function TopBar() {
           </span>
         </Link>
         <nav className="flex items-center gap-4 text-sm font-medium text-[var(--color-ink)]">
-          <Link to="/status" className="hover:text-[var(--color-marigold-dark)]">
+          <Link
+            to="/status"
+            className="rounded-full bg-[var(--color-marigold)] px-4 py-1.5 font-display font-bold text-[var(--color-ink-dark)] shadow-sm transition hover:brightness-110"
+          >
             রেজিস্ট্রেশন স্ট্যাটাস
           </Link>
         </nav>
