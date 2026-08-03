@@ -108,9 +108,18 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <p className="mt-6 rounded-lg border border-dashed border-[var(--color-paper-line)] p-4 text-sm text-[var(--color-text)]/70">
-          স্টুডেন্ট পোর্টাল ও পরীক্ষার কাজ চলমান। আগামী ৫ দিনের মধ্যে চালু করা হবে।
-        </p>
+        <div className="mt-6 flex flex-col items-start gap-3 rounded-lg border border-dashed border-[var(--color-paper-line)] p-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-[var(--color-text)]/70">
+            এমসিকিউ মক টেস্ট এখন চালু আছে। লিখিত মক টেস্ট, লাইভ পরীক্ষা ও স্টুডেন্ট পোর্টালের কাজ
+            চলমান — আগামী ৫ দিনের মধ্যে চালু করা হবে।
+          </p>
+          <Link
+            to="/exam/mcq"
+            className="shrink-0 rounded-xl bg-[var(--color-ink)] px-5 py-2.5 font-display text-sm font-bold text-white transition hover:brightness-110"
+          >
+            এমসিকিউ মক টেস্ট দিন
+          </Link>
+        </div>
       </section>
     </div>
   );
