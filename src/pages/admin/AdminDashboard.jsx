@@ -113,7 +113,7 @@ function Registrations({ token }) {
               <div>
                 <p className="font-display font-bold text-[var(--color-ink)]">{r.name}</p>
                 <p className="text-sm text-[var(--color-text)]/70">
-                  {r.className} শ্রেণী · {r.school} · {r.division}
+                  {r.className} শ্রেণি · {r.school} · {r.division}
                 </p>
                 <p className="text-sm text-[var(--color-text)]/70">{r.phone} · {r.email}</p>
                 <p className="mt-1 text-sm text-[var(--color-bluepen)]">
@@ -192,6 +192,11 @@ function Settings({ token }) {
       </Field>
       <Field label="কোর্স ছবির URL (Google Drive/Imgur লিংক)">
         <input className="input" value={form.courseImageUrl || ""} onChange={set("courseImageUrl")} placeholder="https://..." />
+        <span className="mt-1 block text-xs text-[var(--color-text)]/60">
+          Google Drive: ছবিতে রাইট-ক্লিক → Share → "Anyone with the link" সিলেক্ট করে লিংক কপি করুন
+          (শেয়ার লিংক দিলেই চলবে, বিশেষ ফরম্যাটে বদলাতে হবে না)। Imgur: ছবি আপলোডের পর যে লিংক
+          পাবেন সেটাই দিন।
+        </span>
       </Field>
       <label className="flex items-center gap-2 text-sm font-semibold text-[var(--color-ink)]">
         <input type="checkbox" checked={!!form.maintenanceMode} onChange={set("maintenanceMode")} />
