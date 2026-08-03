@@ -39,22 +39,21 @@ export default function Home() {
                 প্রস্তুতি মডেল টেস্ট কোর্স
               </p>
               <p className="mt-4 text-base leading-relaxed text-[var(--color-text)]/90 md:text-lg">
-                ষষ্ঠ থেকে দশম শ্রেণির শিক্ষার্থীদের জন্য সম্পূর্ণ বাংলাবিদ এর আদলে তৈরি মডেল টেস্ট
-                কোর্স। এমসিকিউ ও লিখিত মক টেস্ট, লাইভ পরীক্ষা, বিভাগীয় সেরা ২০ লাইভ মক, বিস্তারিত
-                বিশ্লেষণ ও র‍্যাঙ্কিং — সবকিছু এক জায়গায়।
-              </p>
+                ষষ্ঠ থেকে দশম শ্রেণির শিক্ষার্থীদের জন্য বাংলাবিদ এর আদলে তৈরি পরিপূর্ণ মডেল টেস্ট কোর্স।
+                বহু নির্বাচনী ও লিখিত মক টেস্ট, লাইভ পরীক্ষা, বিভাগীয় সেরা ২০ লাইভ মক,
+                বিস্তারিত বিশ্লেষণ ও র‍্যাঙ্কিং — সবকিছু এক জায়গায়।
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   to="/register"
                   className="rounded-xl bg-[var(--color-redpen)] px-6 py-3 font-display text-base font-bold text-white shadow-lg shadow-[var(--color-redpen)]/20 transition hover:brightness-110 active:scale-95"
                 >
-                  এখনই ভর্তি হোন
+                  এখনই নিবন্ধন করুন
                 </Link>
                 <Link
                   to="/status"
                   className="rounded-xl bg-[var(--color-marigold)] px-6 py-3 font-display text-base font-bold text-[var(--color-ink-dark)] shadow-lg shadow-[var(--color-marigold)]/30 transition hover:brightness-110 active:scale-95"
                 >
-                  রেজিস্ট্রেশন স্ট্যাটাস দেখুন
+                  ্নিবন্ধন স্ট্যাটাস দেখুন
                 </Link>
               </div>
             </div>
@@ -70,7 +69,7 @@ export default function Home() {
                 ) : (
                   <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-[var(--color-paper)]/70">
                     <span className="font-display text-5xl">বি</span>
-                    <span className="text-sm">কোর্সের ছবি এডমিন প্যানেল থেকে যুক্ত হবে</span>
+                    <span className="text-sm">কোর্স প্লান লোড হচ্ছে</span>
                   </div>
                 )}
               </div>
@@ -93,7 +92,7 @@ export default function Home() {
             ["লাইভ পরীক্ষা", "নির্দিষ্ট সময়ে সবার সাথে প্রতিযোগিতামূলক পরীক্ষা ও র‍্যাঙ্কিং।"],
             ["অভিজ্ঞ মেন্টর দ্বারা মূল্যায়ন", "লিখিত খাতা সরাসরি অভিজ্ঞ মেন্টররা দেখে নম্বর দেবেন।"],
             ["সারা দেশের মেরিট", "সারা দেশের শিক্ষার্থীদের সাথে নিজের অবস্থান যাচাই করুন।"],
-            ["বিভাগীয় সেরা ২০", "প্রতিটি বিভাগের সেরা ২০ জনের জন্য বিশেষ লাইভ মক টেস্ট।"],
+            ["বিভাগীয় সেরা ২০", "প্রতিটি বিভাগের সেরা ২০ প্রস্তুতির জন্য বিশেষ লাইভ মক টেস্ট।"],
           ].map(([title, desc]) => (
             <div
               key={title}
