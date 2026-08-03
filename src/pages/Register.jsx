@@ -38,6 +38,10 @@ export default function Register() {
   const navigate = useNavigate();
 
   const set = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
+  const setPhoneLike = (key) => (e) => {
+    const digitsOnly = e.target.value.replace(/[^0-9]/g, "").slice(0, 11);
+    setForm((f) => ({ ...f, [key]: digitsOnly }));
+  };
 
   function validateStep1() {
     if (!form.name || !form.className || !form.school || !form.division || !form.phone || !form.email || !form.password) {
@@ -135,10 +139,10 @@ export default function Register() {
           className="mt-6 space-y-4"
         >
           <Field label="শিক্ষার্থীর নাম (বাংলায়)">
-            <input className="input" value={form.name} onChange={set("name")} placeholder="যেমনঃ রিয়ন খান" />
+            <input className="input" required value={form.name} onChange={set("name")} placeholder="যেমনঃ রিয়ন খান" />
           </Field>
-          <Field label="শ্রেণী">
-            <select className="input" value={form.className} onChange={set("className")}>
+          <Field label="শ্রেণি">
+            <select className="input" required value={form.className} onChange={set("className")}>
               <option value="">নির্বাচন করুন</option>
               {CLASSES.map((c) => (
                 <option key={c} value={c}>{c}</option>
@@ -146,10 +150,10 @@ export default function Register() {
             </select>
           </Field>
           <Field label="বিদ্যালয়ের নাম">
-            <input className="input" value={form.school} onChange={set("school")} placeholder="যেমনঃ জামালপুর জিলা স্কুল" />
+            <input className="input" required value={form.school} onChange={set("school")} placeholder="যেমনঃ জামালপুর জিলা স্কুল" />
           </Field>
           <Field label="বিভাগ">
-            <select className="input" value={form.division} onChange={set("division")}>
+            <select className="input" required value={form.division} onChange={set("division")}>
               <option value="">নির্বাচন করুন</option>
               {DIVISIONS.map((d) => (
                 <option key={d} value={d}>{d}</option>
@@ -157,13 +161,21 @@ export default function Register() {
             </select>
           </Field>
           <Field label="মোবাইল নম্বর">
-            <input className="input" value={form.phone} onChange={set("phone")} placeholder="০১XXXXXXXXX" inputMode="numeric" />
+            <input
+              className="input"
+              required
+              value={form.phone}
+              onChange={setPhoneLike("phone")}
+              placeholder="০১XXXXXXXXX"
+              inputMode="numeric"
+              maxLength={11}
+            />
           </Field>
           <Field label="ইমেইল">
-            <input className="input" type="email" value={form.email} onChange={set("email")} placeholder="you@example.com" />
+            <input className="input" required type="email" value={form.email} onChange={set("email")} placeholder="you@example.com" />
           </Field>
           <Field label="পাসওয়ার্ড (পরবর্তীতে লগইনের জন্য)">
-            <input className="input" type="password" value={form.password} onChange={set("password")} />
+            <input className="input" required type="password" value={form.password} onChange={set("password")} />
           </Field>
 
           <button
@@ -186,10 +198,18 @@ export default function Register() {
           </div>
 
           <Field label="আপনার বিকাশ নম্বর (যেটি থেকে টাকা পাঠিয়েছেন)">
-            <input className="input" value={form.bkashSender} onChange={set("bkashSender")} placeholder="০১XXXXXXXXX" inputMode="numeric" />
+            <input
+              className="input"
+              required
+              value={form.bkashSender}
+              onChange={setPhoneLike("bkashSender")}
+              placeholder="০১XXXXXXXXX"
+              inputMode="numeric"
+              maxLength={11}
+            />
           </Field>
           <Field label="ট্রানজেকশন আইডি (Transaction ID)">
-            <input className="input" value={form.transactionId} onChange={set("transactionId")} placeholder="যেমনঃ 9F7A2XYZ1" />
+            <input className="input" required value={form.transactionId} onChange={set("transactionId")} placeholder="যেমনঃ 9F7A2XYZ1" />
           </Field>
 
           <div className="flex gap-3">

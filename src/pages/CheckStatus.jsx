@@ -62,9 +62,12 @@ export default function CheckStatus() {
 
       {result && (
         <div className="mt-6 rounded-xl border border-[var(--color-paper-line)] bg-white/60 p-5">
-          <p className="text-sm text-[var(--color-text)]/70">{result.name}</p>
+          <p className="font-display font-bold text-[var(--color-ink)]">{result.name}</p>
+          <p className="mt-1 text-sm text-[var(--color-text)]/70">
+            {result.className} শ্রেণি · {result.school} · {result.division}
+          </p>
           <span
-            className={`mt-2 inline-block rounded-full px-4 py-1 font-display text-sm font-bold ${LABELS[result.status]?.cls}`}
+            className={`mt-3 inline-block rounded-full px-4 py-1 font-display text-sm font-bold ${LABELS[result.status]?.cls}`}
           >
             {LABELS[result.status]?.text || result.status}
           </span>

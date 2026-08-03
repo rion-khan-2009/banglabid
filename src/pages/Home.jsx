@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../lib/api";
+import { toDirectImageUrl } from "../lib/image";
 import CountdownBanner from "../components/CountdownBanner";
 import PunchHoles from "../components/PunchHoles";
 import Loader from "../components/Loader";
@@ -39,22 +40,22 @@ export default function Home() {
                 প্রস্তুতি মডেল টেস্ট কোর্স
               </p>
               <p className="mt-4 text-base leading-relaxed text-[var(--color-text)]/90 md:text-lg">
-                ষষ্ঠ থেকে দশম শ্রেণির শিক্ষার্থীদের জন্য বাংলাবিদ এর আদলে তৈরি পরিপূর্ণ মডেল টেস্ট কোর্স।
-                বহু নির্বাচনী ও লিখিত মক টেস্ট, লাইভ পরীক্ষা, বিভাগীয় সেরা ২০ লাইভ মক,
-                বিস্তারিত বিশ্লেষণ ও র‍্যাঙ্কিং — সবকিছু এক জায়গায়।
+                ষষ্ঠ থেকে দশম শ্রেণির শিক্ষার্থীদের জন্য সম্পূর্ণ বাংলাবিদ এর আদলে তৈরি মডেল টেস্ট
+                কোর্স। এমসিকিউ ও লিখিত মক টেস্ট, লাইভ পরীক্ষা, বিভাগীয় সেরা ২০ লাইভ মক, বিস্তারিত
+                বিশ্লেষণ ও র‍্যাঙ্কিং — সবকিছু এক জায়গায়।
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   to="/register"
                   className="rounded-xl bg-[var(--color-redpen)] px-6 py-3 font-display text-base font-bold text-white shadow-lg shadow-[var(--color-redpen)]/20 transition hover:brightness-110 active:scale-95"
                 >
-                  এখনই নিবন্ধন করুন
+                  এখনই ভর্তি হোন
                 </Link>
                 <Link
                   to="/status"
                   className="rounded-xl bg-[var(--color-marigold)] px-6 py-3 font-display text-base font-bold text-[var(--color-ink-dark)] shadow-lg shadow-[var(--color-marigold)]/30 transition hover:brightness-110 active:scale-95"
                 >
-                  নিবন্ধন স্ট্যাটাস দেখুন
+                  রেজিস্ট্রেশন স্ট্যাটাস দেখুন
                 </Link>
               </div>
             </div>
@@ -63,14 +64,17 @@ export default function Home() {
               <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border-4 border-white bg-[var(--color-ink)] shadow-2xl">
                 {settings?.courseImageUrl ? (
                   <img
-                    src={settings.courseImageUrl}
+                    src={toDirectImageUrl(settings.courseImageUrl)}
                     alt="বাংলাবিদ কোর্স"
                     className="h-full w-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
                   />
                 ) : (
                   <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-[var(--color-paper)]/70">
                     <span className="font-display text-5xl">বি</span>
-                    <span className="text-sm">কোর্স প্লান লোড হচ্ছে</span>
+                    <span className="text-sm">কোর্সের ছবি এডমিন প্যানেল থেকে যুক্ত হবে</span>
                   </div>
                 )}
               </div>
@@ -88,12 +92,12 @@ export default function Home() {
         </h2>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {[
-            ["আনলিমিটেড মক টেস্ট", "যতবার ইচ্ছা অনুশীলন, কোনো সীমা নেই।"],
-            ["আসল পরীক্ষার অনুরূপ", "প্রশ্নের মান ও ধরন হুবহু মূল পরীক্ষার অনুরূপ"],
-            ["লাইভ পরীক্ষা", "নির্দিষ্ট সময়ে সবার সাথে প্রতিযোগিতামূলক পরীক্ষা ও র‍্যাঙ্কিং"],
-            ["অভিজ্ঞ মেন্টর দ্বারা মূল্যায়ন", "লিখিত খাতা সরাসরি অভিজ্ঞ মেন্টরদের দ্বারা মূল্যায়ন"],
-            ["সারা দেশের মেরিট", "সারা দেশের শিক্ষার্থীদের সাথে নিজের অবস্থান যাচাই "],
-            ["বিভাগীয় সেরা ২০", "বিভাগীয় সেরা ২০ প্রস্তুতির জন্য বিশেষ লাইভ মক টেস্ট"],
+            ["আনলিমিটেড মক টেস্ট", "যতবার ইচ্ছা অনুশীলন করুন, কোনো সীমা নেই।"],
+            ["আসল পরীক্ষার অনুরূপ", "প্রশ্নের মান ও ধরন হুবহু আসল পরীক্ষার মতো।"],
+            ["লাইভ পরীক্ষা", "নির্দিষ্ট সময়ে সবার সাথে প্রতিযোগিতামূলক পরীক্ষা ও র‍্যাঙ্কিং।"],
+            ["অভিজ্ঞ মেন্টর দ্বারা মূল্যায়ন", "লিখিত খাতা সরাসরি অভিজ্ঞ মেন্টররা দেখে নম্বর দেবেন।"],
+            ["সারা দেশের মেরিট", "সারা দেশের শিক্ষার্থীদের সাথে নিজের অবস্থান যাচাই করুন।"],
+            ["বিভাগীয় সেরা ২০", "প্রতিটি বিভাগের সেরা ২০ জনের জন্য বিশেষ লাইভ মক টেস্ট।"],
           ].map(([title, desc]) => (
             <div
               key={title}
@@ -104,6 +108,9 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <p className="mt-6 rounded-lg border border-dashed border-[var(--color-paper-line)] p-4 text-sm text-[var(--color-text)]/70">
+          স্টুডেন্ট পোর্টাল ও পরীক্ষার কাজ চলমান। আগামী ৫ দিনের মধ্যে চালু করা হবে।
+        </p>
       </section>
     </div>
   );
