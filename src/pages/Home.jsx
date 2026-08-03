@@ -32,19 +32,16 @@ export default function Home() {
           <PunchHoles />
           <div className="grid items-center gap-10 pl-6 md:grid-cols-2 md:pl-16">
             <div>
-              <p className="mb-3 inline-block rounded-full bg-[var(--color-ink)] px-3 py-1 font-display text-xs font-semibold text-[var(--color-paper)]">
-                অগ্রদূত উপস্থাপন করছে
-              </p>
               <h1 className="font-display text-4xl font-extrabold leading-tight text-[var(--color-ink)] md:text-5xl">
-                বাংলাবিদ
+                অগ্রদূত বাংলাবিদ
               </h1>
               <p className="mt-1 font-display text-lg font-semibold text-[var(--color-marigold-dark)]">
-                প্রস্তুতি ফ্রি কোর্স
+                প্রস্তুতি মডেল টেস্ট কোর্স
               </p>
               <p className="mt-4 text-base leading-relaxed text-[var(--color-text)]/90 md:text-lg">
-                ষষ্ঠ থেকে দশম শ্রেণির শিক্ষার্থীদের জন্য সম্পূর্ণ বিনামূল্যে মডেল টেস্ট কোর্স।
-                এমসিকিউ ও লিখিত মক টেস্ট, লাইভ পরীক্ষা, বিস্তারিত বিশ্লেষণ ও র‍্যাঙ্কিং —
-                সবকিছু এক জায়গায়।
+                ষষ্ঠ থেকে দশম শ্রেণির শিক্ষার্থীদের জন্য সম্পূর্ণ বাংলাবিদ এর আদলে তৈরি মডেল টেস্ট
+                কোর্স। এমসিকিউ ও লিখিত মক টেস্ট, লাইভ পরীক্ষা, বিভাগীয় সেরা ২০ লাইভ মক, বিস্তারিত
+                বিশ্লেষণ ও র‍্যাঙ্কিং — সবকিছু এক জায়গায়।
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
@@ -55,7 +52,7 @@ export default function Home() {
                 </Link>
                 <Link
                   to="/status"
-                  className="rounded-xl border-2 border-[var(--color-ink)] px-6 py-3 font-display text-base font-bold text-[var(--color-ink)] transition hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)]"
+                  className="rounded-xl bg-[var(--color-marigold)] px-6 py-3 font-display text-base font-bold text-[var(--color-ink-dark)] shadow-lg shadow-[var(--color-marigold)]/30 transition hover:brightness-110 active:scale-95"
                 >
                   রেজিস্ট্রেশন স্ট্যাটাস দেখুন
                 </Link>
@@ -91,9 +88,12 @@ export default function Home() {
         </h2>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {[
-            ["এমসিকিউ মক টেস্ট", "৪০টি প্রশ্ন, ৪০ মিনিট সময়, যতবার ইচ্ছা অনুশীলন।"],
-            ["লিখিত মক টেস্ট", "উদ্দীপকভিত্তিক প্রশ্ন, খাতায় লিখে ছবি তুলে জমা দিন।"],
+            ["আনলিমিটেড মক টেস্ট", "যতবার ইচ্ছা অনুশীলন করুন, কোনো সীমা নেই।"],
+            ["আসল পরীক্ষার অনুরূপ", "প্রশ্নের মান ও ধরন হুবহু আসল পরীক্ষার মতো।"],
             ["লাইভ পরীক্ষা", "নির্দিষ্ট সময়ে সবার সাথে প্রতিযোগিতামূলক পরীক্ষা ও র‍্যাঙ্কিং।"],
+            ["অভিজ্ঞ মেন্টর দ্বারা মূল্যায়ন", "লিখিত খাতা সরাসরি অভিজ্ঞ মেন্টররা দেখে নম্বর দেবেন।"],
+            ["সারা দেশের মেরিট", "সারা দেশের শিক্ষার্থীদের সাথে নিজের অবস্থান যাচাই করুন।"],
+            ["বিভাগীয় সেরা ২০", "প্রতিটি বিভাগের সেরা ২০ জনের জন্য বিশেষ লাইভ মক টেস্ট।"],
           ].map(([title, desc]) => (
             <div
               key={title}
@@ -104,9 +104,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <p className="mt-6 rounded-lg border border-dashed border-[var(--color-paper-line)] p-4 text-sm text-[var(--color-text)]/70">
-          পরীক্ষা কেন্দ্র (এক্সাম সেন্টার) ও স্টুডেন্ট লগইন শীঘ্রই আসছে — রেজিস্ট্রেশন এখন থেকেই চালু।
-        </p>
       </section>
     </div>
   );

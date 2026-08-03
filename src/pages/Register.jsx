@@ -135,7 +135,7 @@ export default function Register() {
           className="mt-6 space-y-4"
         >
           <Field label="শিক্ষার্থীর নাম (বাংলায়)">
-            <input className="input" value={form.name} onChange={set("name")} placeholder="যেমনঃ রিওন আহমেদ" />
+            <input className="input" value={form.name} onChange={set("name")} placeholder="যেমনঃ রিয়ন খান" />
           </Field>
           <Field label="শ্রেণী">
             <select className="input" value={form.className} onChange={set("className")}>
@@ -178,9 +178,11 @@ export default function Register() {
       {step === 2 && (
         <form onSubmit={submit} className="mt-6 space-y-4">
           <div className="rounded-xl border border-[var(--color-marigold)]/40 bg-[var(--color-marigold)]/10 p-4 text-sm leading-relaxed">
-            নিচের বিকাশ নম্বরে নির্দিষ্ট পরিমাণ টাকা <b>Send Money</b> করুন, তারপর যে নম্বর থেকে
-            টাকা পাঠিয়েছেন সেটি ও ট্রানজেকশন আইডি নিচে লিখে জমা দিন। পেমেন্ট যাচাইয়ের পর
-            রেজিস্ট্রেশন কনফার্ম করা হবে।
+            নিচের বিকাশ নম্বরে{" "}
+            <span className="font-display text-base font-bold text-[var(--color-ink)]">০১৭১০১৭৬৩০১</span>{" "}
+            নির্দিষ্ট পরিমাণ টাকা <b>Send Money</b> করুন, তারপর যে নম্বর থেকে টাকা পাঠিয়েছেন
+            সেটি ও ট্রানজেকশন আইডি নিচে লিখে জমা দিন। পেমেন্ট যাচাইয়ের পর রেজিস্ট্রেশন কনফার্ম
+            করা হবে।
           </div>
 
           <Field label="আপনার বিকাশ নম্বর (যেটি থেকে টাকা পাঠিয়েছেন)">
