@@ -211,7 +211,14 @@ function doPost(e) {
         if (!reg) return jsonOut_({ ok: false, message: "কোনো রেজিস্ট্রেশন পাওয়া যায়নি।" });
         return jsonOut_({
           ok: true,
-          data: { name: reg.name, status: reg.status, note: reg.note },
+          data: {
+            name: reg.name,
+            className: reg.className,
+            school: reg.school,
+            division: reg.division,
+            status: reg.status,
+            note: reg.note,
+          },
         });
       }
 
