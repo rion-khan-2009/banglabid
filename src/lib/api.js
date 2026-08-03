@@ -31,10 +31,16 @@ export const api = {
   register: (data) => callApi("register", data),
   checkStatus: (phone, email) => callApi("checkStatus", { phone, email }),
 
+  startMcqExam: (phone, email, examType = "mock") => callApi("startMcqExam", { phone, email, examType }),
+  submitMcqExam: (payload) => callApi("submitMcqExam", payload),
+
   adminLogin: (username, password) => callApi("adminLogin", { username, password }),
   adminListRegistrations: (token) => callApi("adminListRegistrations", { token }),
   adminUpdateRegistrationStatus: (token, id, status) =>
     callApi("adminUpdateRegistrationStatus", { token, id, status }),
   adminUpdateSettings: (token, settings) =>
     callApi("adminUpdateSettings", { token, ...settings }),
+  adminAddQuestion: (token, question) => callApi("adminAddQuestion", { token, ...question }),
+  adminListQuestions: (token) => callApi("adminListQuestions", { token }),
+  adminDeleteQuestion: (token, id) => callApi("adminDeleteQuestion", { token, id }),
 };
