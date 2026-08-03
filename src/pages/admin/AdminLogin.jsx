@@ -32,7 +32,8 @@ export default function AdminLogin() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[var(--color-ink)] px-4">
       <form onSubmit={submit} className="w-full max-w-sm rounded-2xl bg-[var(--color-paper)] p-8 shadow-2xl">
-        <h1 className="font-display text-2xl font-bold text-[var(--color-ink)]">অ্যাডমিন লগইন</h1>
+        <img src="/images/agrodut-logo.png" alt="অগ্রদূত" className="mx-auto h-16 w-16 rounded-full object-cover" />
+        <h1 className="mt-4 font-display text-2xl font-bold text-[var(--color-ink)]">অ্যাডমিন লগইন</h1>
         <p className="mt-1 text-sm text-[var(--color-text)]/70">বাংলাবিদ অ্যাডমিন প্যানেল</p>
 
         {error && (
