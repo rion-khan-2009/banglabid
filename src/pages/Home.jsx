@@ -42,6 +42,7 @@ export default function Home() {
                 ষষ্ঠ থেকে দশম শ্রেণির শিক্ষার্থীদের জন্য বাংলাবিদ এর আদলে তৈরি পরিপূর্ণ মডেল টেস্ট কোর্স।
                 বহু নির্বাচনী ও লিখিত মক টেস্ট, লাইভ পরীক্ষা, বিভাগীয় সেরা ২০ লাইভ মক,
                 বিস্তারিত বিশ্লেষণ ও র‍্যাঙ্কিং — সবকিছু এক জায়গায়।
+              </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   to="/register"
@@ -53,7 +54,7 @@ export default function Home() {
                   to="/status"
                   className="rounded-xl bg-[var(--color-marigold)] px-6 py-3 font-display text-base font-bold text-[var(--color-ink-dark)] shadow-lg shadow-[var(--color-marigold)]/30 transition hover:brightness-110 active:scale-95"
                 >
-                  ্নিবন্ধন স্ট্যাটাস দেখুন
+                  নিবন্ধন স্ট্যাটাস দেখুন
                 </Link>
               </div>
             </div>
